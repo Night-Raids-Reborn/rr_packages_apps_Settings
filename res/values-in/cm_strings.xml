@@ -93,4 +93,7 @@
     <string name="max_label">Maks</string>
     <string name="heads_up_notifications_enabled_title">Notifikasi mengambang</string>
     <string name="heads_up_notifications_enabled_summary">Menampilkan pemberitahuan prioritas dalam jendela kecil yang mengambang</string>
+    <!-- wifi client -->
+    <string name="wifi_tether_client_list_title">Daftar Klien</string>
+    <string name="wifi_tether_client_list_summary">Kelola klien yang terhubung ke hotspot</string>
 </resources>
