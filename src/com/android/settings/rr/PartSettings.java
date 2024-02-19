@@ -52,7 +52,7 @@ public class PartSettings extends SettingsPreferenceFragment implements
 
     private static final String SMART_PIXELS = "smart_pixels";
     private Preference mSmartPixels;
-    private static final String PREF_ADBLOCK = "persist.aicp.hosts_block";
+    private static final String PREF_ADBLOCK = "persist.rr.hosts_block";
 
     private Handler mHandler = new Handler();
 
