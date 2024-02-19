@@ -96,4 +96,7 @@
     <!-- wifi client -->
     <string name="wifi_tether_client_list_title">Daftar Klien</string>
     <string name="wifi_tether_client_list_summary">Kelola klien yang terhubung ke hotspot</string>
+    <!-- ad-blocker -->
+    <string name="hosts_block_title">Blokir Iklan</string>
+    <string name="hosts_block_summary">Blokir iklan dengan file host yang dimodifikasi. Matikan untuk menggunakan solusi pihak ketiga atau jika app menyebabkan masalah.</string>
 </resources>

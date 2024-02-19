@@ -84,6 +84,12 @@
         android:icon="@drawable/rr_memory_icon"
         android:summary="@string/time_in_state_summary"
         android:fragment="com.android.settings.rr.fragments.TimeInState" />
+    
+    <com.android.settings.rr.preferences.SystemPropSwitchPreference
+            android:key="persist.rr.hosts_block"
+            android:title="@string/hosts_block_title"
+            android:summary="@string/hosts_block_summary"
+            android:defaultValue="false" />
 
     <!--Preference
         android:key="stock_tuner"

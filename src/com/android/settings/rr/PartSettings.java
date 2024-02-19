@@ -28,6 +28,8 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.os.Handler;
+import java.net.InetAddress;
 
 
 import android.provider.SearchIndexableResource;
@@ -50,6 +52,9 @@ public class PartSettings extends SettingsPreferenceFragment implements
 
     private static final String SMART_PIXELS = "smart_pixels";
     private Preference mSmartPixels;
+    private static final String PREF_ADBLOCK = "persist.aicp.hosts_block";
+
+    private Handler mHandler = new Handler();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,7 +82,7 @@ public class PartSettings extends SettingsPreferenceFragment implements
                 removePreference("preview");
             }
         } catch (Exception e) {}
-
+        findPreference(PREF_ADBLOCK).setOnPreferenceChangeListener(this);
     }
 
      @Override
@@ -86,6 +91,17 @@ public class PartSettings extends SettingsPreferenceFragment implements
      }
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (PREF_ADBLOCK.equals(preference.getKey())) {
+            // Flush the java VM DNS cache to re-read the hosts file.
+            // Delay to ensure the value is persisted before we refresh
+            mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        InetAddress.clearDnsCache();
+                    }
+            }, 1000);
+            return true;
+        }
         return false;
     }
 
