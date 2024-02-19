@@ -85,7 +85,7 @@
         android:summary="@string/time_in_state_summary"
         android:fragment="com.android.settings.rr.fragments.TimeInState" />
     
-    <com.android.settings.rr.preferences.SystemPropSwitchPreference
+    <com.android.settings.rr.Preferences.SystemPropSwitchPreference
             android:key="persist.rr.hosts_block"
             android:title="@string/hosts_block_title"
             android:summary="@string/hosts_block_summary"
